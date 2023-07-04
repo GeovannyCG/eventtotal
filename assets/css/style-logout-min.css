@@ -1,0 +1,96 @@
+/* Estilos para el body */
+body {
+    background-color: #dfe5ff;
+}
+
+/* Estilos para el contenedor prinicipal del formulario de login */
+.form-container {
+    width: 500px;
+    padding: 20px 20px;
+
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    background-color: white;
+}
+
+.form-container h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.form-container svg{
+    fill: #718AE9;
+}
+
+.form-container svg{
+    fill: #718AE9;
+}
+
+.form-container #btnRegresar{
+    padding: 10px 10px;
+    background-color: #718AE9;
+    color: white;
+    text-decoration: none;
+
+}
+
+/* Estilos para el encabezado del formulario de login (logo y nombre de la app) */
+
+#form-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#form-header img {
+    width: 80px;
+    height: auto;
+}
+
+#form-header h1 {
+    margin-top: 15px;
+}
+
+
+.footer-login {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 10px;
+    color: #718AE9;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+
+.footer-login a:link{
+    color: #718AE9;
+}
+
+.footer-login a:visited{
+    color: #3960ff;
+}
+
+.footer-login a:hover{
+    color: #617ef3;
+}
+
+#link-1-terms {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+/* Estilos para los elementos del la ventana de log-out */
+
+.elementos-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+}

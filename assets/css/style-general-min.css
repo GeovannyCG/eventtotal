@@ -1,0 +1,118 @@
+/* 
+Copyright (c) 2023 EventEase/SOFTCG
+
+Todos los derechos reservados.
+
+Este código está protegido por las leyes de derechos de autor y tratados internacionales. No está permitida la reproducción, distribución, modificación o uso no autorizado de este código sin el permiso previo por escrito del titular de los derechos de autor.
+*/
+
+/*CSS para el Navbar*/
+
+nav {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px;
+    height: auto;
+}
+
+#content-right {
+    display: flex;
+    flex-direction: row;
+}
+
+#content-right button{
+    margin-right: 15px;
+}
+
+#content-right h1{
+    font-weight: 450;
+}
+
+/*CSS para el sidebar en version "Desktop"*/
+
+.btn-menu {
+  background: none;
+  border: 2px solid #718AE9;
+  border-radius: 10px;
+}
+
+.btn-menu svg {
+    fill: #718AE9;
+  }
+
+.btn-menu:hover{
+  background: #718AE9;
+  border: 2px solid #718AE9;
+  border-radius: 10px;
+}
+
+.btn-menu:hover svg {
+    fill: #fff;
+  }
+
+:root {
+  --main-color: rgb(48, 48, 48);
+  --bg-color: rgb(31, 31, 31);
+}
+
+.sidebar {
+  width: 80px;
+  background-color: var(--main-color);
+  height: 100vh;
+  position: fixed;
+  background-color: #718AE9;
+}
+
+.sidebar.active {
+  width: 200px;
+}
+
+.sidebar ul {
+  padding: 20px;
+}
+.sidebar ul li {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  padding: 10px;
+  transition: 0.4s easy;
+}
+
+.sidebar ul li a:hover {
+  background-color: #fff;
+  color: rgb(20, 20, 20);
+  border-radius: 5px;
+}
+
+.sidebar ul li a i {
+  padding-right: 25px;
+  font-size: 24px;
+}
+
+.sidebar ul li a span {
+  display: none;
+}
+
+.sidebar.active ul li a span {
+  display: block;
+}
+
+.wrapper {
+    margin-top: 5px;
+  position: relative;
+  left: 80px;
+  width: calc(
+    100% - 80px
+  ); /*Esto hace que el Wrapper ocupe mas espacio del requerido*/
+  background-color: #ffffff;
+  padding: 20px;
+}
