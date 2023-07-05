@@ -14,6 +14,8 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px 20px;
+    height: 90px;
 }
 
 #content-right {
@@ -32,11 +34,11 @@ nav {
 /*CSS para el sidebar en version "Desktop"*/
 
 .btn-menu {
-    background: none;
-    border: 2px solid #718AE9;
-    border-radius: 10px;
-    height: 45px;
-    margin-top: 4px;
+  background: none;
+  border: 2px solid #718AE9;
+  border-radius: 10px;
+  height: 45px;
+  margin-top: 4px;
 }
 
 .btn-menu svg {
@@ -116,6 +118,7 @@ nav {
   background-color: #ffffff;
   padding: 20px;
 }
+
 
 /* Estilos del h2 de los elementos del left */
 
