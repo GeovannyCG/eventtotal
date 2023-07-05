@@ -118,3 +118,9 @@ nav {
   background-color: #ffffff;
   padding: 20px;
 }
+
+/* Estilos del h2 de los elementos del left */
+
+#content-right h2{
+  margin-top: 7px;
+}
