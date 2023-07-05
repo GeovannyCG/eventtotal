@@ -34,9 +34,11 @@ nav {
 /*CSS para el sidebar en version "Desktop"*/
 
 .btn-menu {
-  background: none;
-  border: 2px solid #718AE9;
-  border-radius: 10px;
+    background: none;
+    border: 2px solid #718AE9;
+    border-radius: 10px;
+    height: 50px;
+    margin-top: 4px;
 }
 
 .btn-menu svg {
