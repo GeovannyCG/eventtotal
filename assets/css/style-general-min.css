@@ -129,3 +129,25 @@ nav {
 #content-right img{
   margin-top: 7px;
 }
+
+
+
+/* Estilos para la seccion de la derecha del navbar*/
+
+#content-left {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#content-left  .btn-recargar {
+  background: none;
+  border-radius: 200px;
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+#content-left  .btn-recargar:hover {
+  background: rgba(217, 217, 217, 0.731);
+}
