@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventTotal | Log-out</title>
     <!-- link de favicon -->
-    <link rel="shortcut icon" href="./assets/images/logotipo-main-curt.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logotipo-main-curt.ico" type="image/x-icon">
     <!-- link css de boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- link de css propio -->
-    <link rel="stylesheet" href="./assets/css/style-logout-min.css">
+    <link rel="stylesheet" href="../assets/css/style-logout-min.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 
         <div class="form-container">
             <div id="form-header">
-                <img src="./assets/images/logotipo-main-curt.png" alt="Logotipo">
+                <img src="../assets/images/logotipo-main-curt.png" alt="Logotipo">
                 <h1>EventTotal</h1>
             </div>
             <h2>Log-out</h2>
@@ -43,7 +43,7 @@
 
                 <h6>Sesion cerrada correctamente, gracias por usar <b>EventTotal</b>.<h6>
                 
-                <a href="" id="btnRegresar">Iniciar sesion</a>
+                <a href="../" id="btnRegresar">Iniciar sesion</a>
 
             </div>
 

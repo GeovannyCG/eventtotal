@@ -8,55 +8,54 @@ Este código está protegido por las leyes de derechos de autor y tratados inter
 
 /* CSS para el body */
 
-
 /*CSS para el Navbar*/
 
 nav {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 20px;
-    height: 90px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 20px;
+  height: 90px;
 }
 
 #content-right {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-#content-right button{
-    margin-right: 15px;
+#content-right button {
+  margin-right: 15px;
 }
 
-#content-right h1{
-    font-weight: 450;
+#content-right h1 {
+  font-weight: 450;
 }
 
 /*CSS para el sidebar en version "Desktop"*/
 
 .btn-menu {
   background: none;
-  border: 2px solid #718AE9;
+  border: 2px solid #718ae9;
   border-radius: 10px;
   height: 45px;
   margin-top: 4px;
 }
 
 .btn-menu svg {
-    fill: #718AE9;
-  }
+  fill: #718ae9;
+}
 
-.btn-menu:hover{
-  background: #718AE9;
-  border: 2px solid #718AE9;
+.btn-menu:hover {
+  background: #718ae9;
+  border: 2px solid #718ae9;
   border-radius: 10px;
 }
 
 .btn-menu:hover svg {
-    fill: #fff;
-  }
+  fill: #fff;
+}
 
 :root {
   --main-color: rgb(48, 48, 48);
@@ -68,7 +67,7 @@ nav {
   background-color: var(--main-color);
   height: 100vh;
   position: fixed;
-  background-color: #718AE9;
+  background-color: #718ae9;
   margin-top: auto;
 }
 
@@ -124,18 +123,19 @@ nav {
   margin-top: 85px;
 }
 
+.wrapper h1 {
+  color: #718ae9;
+}
 
 /* Estilos del h2 de los elementos del left */
 
-#content-right h2{
+#content-right h2 {
   margin-top: 7px;
 }
 
-#content-right img{
+#content-right img {
   margin-top: 7px;
 }
-
-
 
 /* Estilos para la seccion de la derecha del navbar*/
 
@@ -145,7 +145,7 @@ nav {
   gap: 10px;
 }
 
-#content-left  .btn-recargar {
+#content-left .btn-recargar {
   background: none;
   border-radius: 200px;
   width: 50px;
@@ -153,7 +153,7 @@ nav {
   border: none;
 }
 
-#content-left  .btn-recargar:hover {
+#content-left .btn-recargar:hover {
   background: rgba(217, 217, 217, 0.731);
 }
 
@@ -166,6 +166,82 @@ nav {
 
 #divConnection {
   display: grid;
-
   place-content: center;
+}
+
+/* estilos para el resumen rapido */
+.resume-activity {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 30px;
+}
+
+.resume-activity span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.target {
+  width: 250px;
+  height: 70px;
+  display: grid;
+  place-content: center;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#target-eventos {
+  background-color: #5b67f0;
+  box-shadow: 0px 2px 4px #5b67f0ac;
+}
+#target-recetas {
+  background-color: #ff8a30;
+  box-shadow: 0px 2px 4px #ff8a30ac;
+}
+#target-salones {
+  background-color: #ffab30;
+  box-shadow: 0px 2px 4px #ffab30ac;
+}
+#target-empleados {
+  background-color: #01a9fa;
+  box-shadow: 0px 2px 4px #01a9faac;
+}
+
+/* estilos para las tarjestas principales el home */
+.contenedor-cards {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventos-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.eventos-cards .card {
+  margin: 10px;
+}
+
+.content-empty {
+  display: grid;
+  place-content: center;
+  height: 200px;
+}
+
+.message-advertenci {
+  font-size: 24px;
+  color: grey;
+}
+
+.details-modal {
+  font-size: 17px;
+}
+
+.contenedor-principal {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  padding: 10px 10px;
+  border-radius: 10px;
 }

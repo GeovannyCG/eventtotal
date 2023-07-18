@@ -1,6 +1,6 @@
 /* Estilos para el body */
 body {
-    background-color: #dfe5ff;
+    background-color: #dfe5ff; 
 }
 
 /* Estilos para el contenedor prinicipal del formulario de login */
@@ -70,7 +70,7 @@ form #btnSend-From {
 }
 
 .footer-login a:visited{
-    color: #3960ff;
+    color: #6583f9;
 }
 
 .footer-login a:hover{

@@ -1,0 +1,37 @@
+body {
+    background-color: #dfe5ff;
+}
+
+#main-container {
+    padding: 20px 20px;
+    text-align: center;
+    width: 64%;
+
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+#message {
+    color: gray;
+}
+
+#error-code {
+    margin-top: -30px;
+    font-size: 100px;
+    color: rgba(128, 128, 128, 0.623);
+    text-shadow: 2px 2px 4px rgba(138, 136, 136, 0.5);
+}
+
+a:link{
+    color: #718AE9;
+}
+
+a:visited{
+    color: #6583f9;
+}
+
+a:hover{
+    color: #617ef3;
+}
