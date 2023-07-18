@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2023 a las 05:18:49
+-- Tiempo de generación: 09-07-2023 a las 08:12:03
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -128,8 +128,16 @@ CREATE TABLE `usuarios_eventtotal` (
   `contrasenia_u` varchar(50) NOT NULL,
   `roll_u` varchar(30) NOT NULL,
   `foto_u` varchar(35) NOT NULL,
+  `intentos_u` int(3) NOT NULL,
   `restriccion_u` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios_eventtotal`
+--
+
+INSERT INTO `usuarios_eventtotal` (`id_u`, `nombres_u`, `apellidos_u`, `cumpleainos_u`, `correo_u`, `contrasenia_u`, `roll_u`, `foto_u`, `intentos_u`, `restriccion_u`) VALUES
+(1, 'Hiojan Geovanny', 'Carrasco Garcia', '2002-09-05', 'hiojan75@gmail.com', 'hiojantest', 'admin', 'none', 2, 'blocked');
 
 --
 -- Índices para tablas volcadas
@@ -227,7 +235,7 @@ ALTER TABLE `salones_eventtotal`
 -- AUTO_INCREMENT de la tabla `usuarios_eventtotal`
 --
 ALTER TABLE `usuarios_eventtotal`
-  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
