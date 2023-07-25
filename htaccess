@@ -5,6 +5,12 @@ RewriteRule ^/$ views/login-eventtotal-view.php
 RewriteRule ^Login/$ controllers/login-eventtotal-controller.php
 RewriteRule ^Home/$ controllers/home-eventtotal-controller.php
 
+RewriteRule ^Profile/$ controllers/profile-user-eventtotal-controller.php
+RewriteRule ^Update-Profile/$ actions/update-profile-action.php [QSA,L]
+
+RewriteRule ^New-Event/$ controllers/create-new-event-controller.php [QSA,L]
+
+RewriteRule ^Create-Event/$ actions/create-new-event-action.php [QSA,L]
 
 RewriteRule ^Error-Internal/$ views/error-internal-eventease-view.html
 RewriteRule ^Error-Connection/$ views/error-service-unavaible-eventease-view.html

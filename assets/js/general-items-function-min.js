@@ -16,6 +16,6 @@ btnToggle.addEventListener("click", () => {
   wrapper.setAttribute("style", "left: 80px"); //En todo clase se le agrega el atibuto de dezplazar en contenido del Wrapper principal
 });
 
-btnRecargar.addEventListener("click", () => {
+btnRecargar.addEventListener("click", () => { //Esta funcioion atraba el evento click en el boton recargar para recargar la ventana
   location.reload();
 });

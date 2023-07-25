@@ -1,7 +1,8 @@
 <?php
 error_reporting(0); //Errores controlados
 
-class Connection { //Creacion de la clase "Connection".
+class Connection
+{ //Creacion de la clase "Connection".
 
     //Declaracion del host ademas de las credenciales de acceso a la db y seleccion de la base de datos para la App.
     private $host = "localhost";
@@ -13,7 +14,8 @@ class Connection { //Creacion de la clase "Connection".
     private $conn;
 
     //Constructor de la clase "Connection".
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn =  new mysqli($this->host, $this->user, $this->password, $this->dataBase); //Se establece conexion con la base de datos.
 
         if ($this->conn->connect_error) { //Se valida que la conexion sea aprovada 
@@ -21,7 +23,8 @@ class Connection { //Creacion de la clase "Connection".
         }
     }
 
-    public function getConn() { //Se declara la funcion "getConn" para el encapsulamiento de los datos.
-            return $this->conn;
-        }
+    public function getConn()
+    { //Se declara la funcion "getConn" para el encapsulamiento de los datos.
+        return $this->conn;
+    }
 }

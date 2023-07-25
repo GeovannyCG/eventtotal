@@ -119,7 +119,7 @@ nav {
     100% - 80px
   ); /*Esto hace que el Wrapper ocupe mas espacio del requerido*/
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px 40px;
   margin-top: 85px;
 }
 
@@ -242,6 +242,34 @@ nav {
 
 .contenedor-principal {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-  padding: 10px 10px;
-  border-radius: 10px;
+  padding: 20px 20px;
+  border-radius: 20px;
+}
+
+.contenedor-principal:hover {
+  box-shadow: 4px 4px 11px #5b67f0ac;
+  padding: 20px 20px;
+  border-radius: 20px;
+}
+
+#target {
+  transition: transform 0.5s;
+}
+
+#target:hover {
+  transform: scale(1.04);
+}
+
+/* Estilos para links deshabilitados */
+
+.link-disable {
+  color: grey;
+}
+
+/* Estilos del pre-formulario de creacion de eventos */
+
+.form-event-information {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

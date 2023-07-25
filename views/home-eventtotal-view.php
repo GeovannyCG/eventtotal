@@ -91,7 +91,7 @@
                     </li>
                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class='bx bxs-file-plus' style='color:#5395e7'></i> <span>Agendar
                                 evento</span></a></li>
-                    <li><a class="dropdown-item" href="#"><i class='bx bxs-user-rectangle' style='color:#718ae9'></i>
+                    <li><a class="dropdown-item" href="../Profile/"><i class='bx bxs-user-rectangle' style='color:#718ae9'></i>
                             <span>Mi perfil</span></a></li>
                     <li><a class="dropdown-item" href="../Logout/"> <i class='bx bxs-log-in' style='color:#ff0000'></i> <span> <b>Cerrar sesion</b></span></a></li>
                     <li>
@@ -115,7 +115,7 @@
         <ul class="nav d-block">
 
             <li>
-                <a href="./home-eventease.html">
+                <a href="../Home/">
                     <i class='bx bxs-home'></i>
                     <span>Inicio</span>
                 </a>
@@ -168,7 +168,7 @@
 
     <!-- Contenedor para el contenido prinicipal del apartado en cuestion ################-->
     <div class="wrapper" id="contenedor-main">
-        <h1>Hola, Bienvenido...</h1>
+        <h1>¡Hola!, Bienvenido de nuevo...</h1>
         <center>
             <div class="resume-activity">
                 <div class="target" id="target-eventos"><i class='bx bxs-calendar-alt' style='color:#ffffff'><span> Eventos: <?php print $countEvents  ?></span></i></div>
@@ -192,15 +192,21 @@
                 <?php } else { ?>
                     <div class="row">
                         <?php foreach ($showEvents as $events) : ?>
-                            <div class="col-sm-6 mb-3 mb-sm-0" style="margin-top: 20px;">
+                            <div class="col-sm-6 mb-3 mb-sm-0" id="target" style="margin-top: 20px;">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h6>Evento <?php echo $events['id_e'] ?></h4>
+                                        <h6>Evento: <?php echo $events['tipo_e'] ?>.</h6>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $events['tipo_e'] ?> <?php echo $events['tema_e'] ?></h5>
-                                        <p class="card-text">fecha y hora: <?php echo $events['fecha_hora_e'] ?></p>
-                                        <a class="btn" style="background-color: #718ae9; color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $events['id_e'] ?>">Mas informacion</a>
+                                        <h5 class="card-title">Nombre del cliente: <?php echo $events['cliente_e'] ?>.</h5>
+                                        <h6 style="color: #718ae9;">Informacion acerca del evento:</h6>
+                                        <p class="card-text">
+                                            <li>fecha y hora agendada: <u><?php echo $events['fecha_hora_e'] ?></u>. </li>
+                                        </p>
+                                        <p class="card-text">
+                                            <li>Numero de invitados: <u><?php echo $events['invitados_e'] ?></u>. </li>
+                                        </p>
+                                        <a class="btn" style="background-color: #718ae9; color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $events['id_e'] ?>">Mas detalles</a>
                                     </div>
                                 </div>
                             </div>
@@ -210,24 +216,35 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles del eveto <?php echo $events['id_e'] ?></h1>
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Evento: "<?php echo $events['tipo_e'] ?>".</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
+                                            <h6 style="color: #718ae9; margin-bottom: 20px;"><u>Detalles del evento:</u></h6>
                                             <ul>
                                                 <li>
-                                                    <p class="details-modal"><b>Fecha y hora del evento: </b><?php echo $events['fecha_hora_e'] ?>.</p>
+                                                    <p class="details-modal"><b>Nombre del cliente: </b><?php echo $events['cliente_e'] ?>.</p>
                                                 </li>
                                                 <li>
-                                                    <p class="details-modal"><b>Tipo de evento: </b><?php echo $events['tipo_e'] ?>.</p>
+                                                    <p class="details-modal"><b>Fecha y hora agendada: </b><?php echo $events['fecha_hora_e'] ?>.</p>
+                                                </li>
+                                                <li>
+                                                    <p class="details-modal"><b>Tematica elegida: </b><?php echo $events['tema_e'] ?>.</p>
                                                 </li>
                                                 <li>
                                                     <p class="details-modal"><b>Numero de invitados: </b><?php echo $events['invitados_e'] ?>.</p>
                                                 </li>
+                                            </ul>
+                                            <h6 style="color: #718ae9; margin-bottom: 20px;"><u>Datos administrativos:</u></h6>
+                                            <ul>
                                                 <li>
-                                                    <p class="details-modal"><b>Tematica del evento: </b> <?php echo $events['tema_e'] ?>.</p>
+                                                    <p class="details-modal"><b>ID Empleado a cargo: </b><?php echo $events['id_u'] ?>.</p>
+                                                </li>
+                                                <li>
+                                                    <p class="details-modal"><b>ID Salon asignado: </b><?php echo $events['id_s'] ?>.</p>
                                                 </li>
                                             </ul>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn" style="background-color: #718ae9; color: white;" data-bs-dismiss="modal">Listo</button>
@@ -256,68 +273,72 @@
                     </div>
                 <?php } else { ?>
                     <?php foreach ($shoeRecipes as $recipes) : ?>
-                        <div class="eventos-cards">
-                            <div class="card" style="width: 100%;">
-                                <div class="card-header">
-                                    Receta <b><?php echo $recipes['id_r'] ?></b>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title"><?php echo $recipes['titulo_r'] ?></h3>
-                                    <p class="card-text" style="margin-top: 20px;"><i>Detalles rapidos...</i></p>
-                                    <p class="card-text"><b>Clasificacion: </b><?php echo $recipes['clasificacion_r'] ?>.</p>
-                                    <p class="card-text"><b>Dificultad: </b><?php echo $recipes['nivel_dificultad_r'] ?>.</p>
-                                    <a class="btn" style="background-color: #718ae9; color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $recipes['id_r'] ?>">Detalles</a>
-                                </div>
+
+                        <div class="card mb-3" id="target" style="width: 90%; margin-top: 20px; margin-left: 5%; background-color: rgb(252, 252, 150);">
+                            <div class="card-body">
+                                <h3 class="card-title"><?php echo $recipes['titulo_r'] ?></h3>
+                                <h6 style="color: #718ae9; margin-bottom: 20px;">Acerca de la receta:</h6>
+                                <p class="card-text">
+                                    <li><i>Tiempo de preparacion:</i> <u><?php echo $recipes['tiempo_preparacion_r'] ?>.</u> </li>
+                                </p>
+                                <p class="card-text">
+                                    <li><i>Porciones con este platillo:</i> <u>para <?php echo $recipes['porciones_r'] ?> personas.</u></li>
+                                </p>
+                                <p class="card-text">
+                                    <li><i>Dificultad de preparacion:</i> <u><?php echo $recipes['nivel_dificultad_r'] ?>.</u></li>
+                                </p>
+                                <p class="card-text">
+                                    <li><i>Tipo de platillo:</i> <u><?php echo $recipes['clasificacion_r'] ?>.</u></li>
+                                </p>
+
+                                <a class="btn" style="background-color: #718ae9; color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $recipes['id_r'] ?>">Receta completa</a>
                             </div>
                         </div>
 
                         <!-- Modal -->
                         <div class="modal fade" id="staticBackdrop<?php echo $recipes['id_r'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable">
-                                <div class="modal-content">
+                                <div class="modal-content" style="background-color: rgb(252, 252, 150);">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles de la receta <?php echo $recipes['titulo_r'] ?></h1>
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles de la receta "<?php echo $recipes['titulo_r'] ?>".</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <ul>
                                             <li>
                                                 <p class="details-modal"><b>Ingredientes: </b></p>
-                                                <p><?php echo $recipes['ingredientes_r'] ?></p>
+                                                <p><i><?php echo $recipes['ingredientes_r'] ?></i></p>
                                             </li>
                                             <li>
                                                 <p class="details-modal"><b>Instrucciones: </b></p>
-                                                <p><?php echo $recipes['instrucciones_r'] ?></p>
+                                                <p><i><?php echo $recipes['instrucciones_r'] ?></i></p>
                                             </li>
                                             <li>
                                                 <p class="details-modal"><b>Tiempo de preparacion: </b></p>
-                                                <p><?php echo $recipes['tiempo_preparacion_r'] ?></p>
+                                                <p><i><?php echo $recipes['tiempo_preparacion_r'] ?></i></p>
                                             </li>
                                             <li>
                                                 <p class="details-modal"><b>Porciones: </b></p>
-                                                <p><?php echo $recipes['porciones_r'] ?></p>
+                                                <p><i><?php echo $recipes['porciones_r'] ?></i></p>
                                             </li>
                                             <li>
                                                 <p class="details-modal"><b>Nivel de dificultad: </b></p>
-                                                <p><?php echo $recipes['nivel_dificultad_r'] ?></p>
+                                                <p><i><?php echo $recipes['nivel_dificultad_r'] ?></i></p>
                                             </li>
                                             <li>
                                                 <p class="details-modal"><b>Consejos adicionales: </b></p>
-                                                <p><?php echo $recipes['consejos_adicionales_r'] ?></p>
+                                                <p><i><?php echo $recipes['consejos_adicionales_r'] ?></i></p>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Understood</button>
+                                        <button type="button" class="btn" style="background-color: #718ae9; color: white;" data-bs-dismiss="modal">Cerrar receta</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php } ?>
-
-
             </div>
         </div>
     </div>
@@ -325,19 +346,52 @@
     <!-- Modal para crear un nuevo evento-->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Datos del evento</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <form action="../New-Event/" method="POST">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Agendar nuevo evento</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-event-information">
+                            <div>
+                                <label for="name_client" class="form-label">Nombre del cliente:</label>
+                                <input type="text" name="name_client" id="name_client" class="form-control">
+                            </div>
+
+                            <div>
+                                <label for="tematic_party" class="form-label">Tematica:</label>
+                                <select name="tematic_party" id="tematic_party" class="form-control">
+                                    <option value="cumpleaños">Cumpleaños</option>
+                                    <option value="graduacion">Graduacion</option>
+                                    <option value="aniversario">Aniversario</option>
+                                    <option value="navidad">Navidad</option>
+                                    <option value="año nuevo">Año nuevo</option>
+                                    <option value="tematica">Tematica</option>
+                                    <option value="disfrases">Disfrases</option>
+                                    <option value="bienvenida">Bienvenida</option>
+                                    <option value="sorpresa">Sorpresa</option>
+                                    <option value="compromiso">Compromiso</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="num_invitades" class="form-label">Numero de invitados:</label>
+                                <input type="number" name="num_invitades" id="num_invitades" class="form-control">
+                            </div>
+
+                            <div>
+                                <label for="date-event" class="form-label">Fecha y hora del evento:</label>
+                                <input type="datetime-local" name="date-event" id="date-event" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="submit" value="Crear" class="btn" style="background-color: #718ae9; color: white;">
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <p>Crear formulario para registro de eventos</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn" style="background-color: #718ae9; color: white;">Crear</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -349,8 +403,6 @@
 
     <!--Script para funcion de boton-->
     <script src="../assets/js/general-items-function-min.js"></script>
-    <script src="../assets/js/general-mode-connection-min.js"></script>
-
 </body>
 
 </html>

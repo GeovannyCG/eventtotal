@@ -1,0 +1,23 @@
+.container-form-event {
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    padding: 20px 20px;
+}
+
+.dates-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section-user-information {
+    margin-top: 20px;
+}
+
+.button-create-event {
+    display: flex;
+    justify-content: right;
+}

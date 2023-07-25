@@ -47,7 +47,7 @@ class Login
                     para finalmente redireccionar al "Home" del usuario*/
                     $resetattempts = "UPDATE usuarios_eventtotal SET intentos_u = 0 WHERE correo_u='$email'";
                     $this->connect->query($resetattempts);
-                    sleep(4);
+                    sleep(3);
                     $_SESSION['email'] = $email;
                     echo "<script>location.href='../Home/'</script>";
                     exit;
