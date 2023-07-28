@@ -9,6 +9,8 @@ if (isset($_SESSION['email'])){
 
         $get_insumos = $insumos_Object->get_Insumos();
 
+        $getId_Users = $insumos_Object->get_Id_Users();
+
     } catch (\Throwable $th) {
         // En caso de que ocurra un error, redirecciona al usuario a la página de error interno.
         echo "<script>location.href='../Error-Internal/'<script>";
