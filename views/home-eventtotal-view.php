@@ -122,7 +122,7 @@
             </li>
 
             <li>
-                <a href="./recipe-book-eventease.html">
+                <a href="../Recetario/">
                     <i class='bx bxs-book'></i>
                     <span>Recetario</span>
                 </a>
