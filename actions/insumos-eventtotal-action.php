@@ -16,9 +16,9 @@ if ($_SESSION['email']) {
             $cantidad = $_POST['Cantidad'];
             $precio = $_POST['Precio'];
             $descripcion = $_POST['Descripcion_Producto'];
-                    
+            $id_u = $_POST['id_u'];
             
-            $insertinsumos = $insumos_Object->insert_Insumos($nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion);
+            $insertinsumos = $insumos_Object->insert_Insumos($nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion, $id_u);
         } elseif (isset($_POST['update'])) {
             // Obtener el ID del usuario de la URL
             $id = $_GET['id'];
