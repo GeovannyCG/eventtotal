@@ -23,21 +23,32 @@ class Insumo {
         return $insumos;
     }
 
-    //Funcion para insertar nuevos insumos
-    public function insert_Insumos($nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion){
-        $consulta_insert_Insumos = ("INSERT INTO insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion'");
+    //Funcion para obtener todos los ids de usuarios de la base de datos
+    public function get_Id_Users(){
+        $consulta_get_idUsers = ("SELECT * FROM usuarios_eventtotal");
+        $execute_consulta_get_idUsers = $this->connect->query($consulta_get_idUsers);
+        $idusuarios = array();
+        while ($fila1 = $execute_consulta_get_idUsers->fetch_assoc()) {
+            $idusuarios[] = $fila1;
+        }
+        return $idusuarios;
+    }
+
+    //Funcion para insertar nuevos usuarios
+    public function insert_Insumos($nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion, $id_u){
+        $consulta_insert_Insumos = ("INSERT INTO insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion', id_u = '$id_u'");
         $execute_consulta_insert_Insumos = $this->connect->query($consulta_insert_Insumos);
     }
 
-    //Funcion para actualizar insumos
+    //Funcion para actualizar usuarios
     public function update_Insumos($id,$nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion){
-        $consulta_update_Insumos = "UPDATE insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion' WHERE id_is = '$id'";
-        $execute_consulta_update_Users = $this->connect->query($consulta_update_Insumos);
+        $consulta_update_Users = "UPDATE insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion' WHERE id_is = '$id'";
+        $execute_consulta_update_Users = $this->connect->query($consulta_update_Users);
     }
 
-    //Funcion para borrar insumos
+    //Funcion para borrar usuarios
     public function delete_Insumos($id){
-        $consulta_delete_Insumos = "DELETE FROM insumos_eventtotal WHERE id_is = $id";
-        $query4 = mysqli_query($this->connect, $consulta_delete_Insumos);
+        $consulta_delete_Users = "DELETE FROM insumos_eventtotal WHERE id_is = $id";
+        $query4 = mysqli_query($this->connect, $consulta_delete_Users);
     }
 }
