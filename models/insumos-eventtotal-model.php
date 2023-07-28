@@ -31,13 +31,13 @@ class Insumo {
 
     //Funcion para actualizar insumos
     public function update_Insumos($id,$nombre_is, $categoria_is, $unidad_medida_is, $cantidad, $precio, $descripcion){
-        $consulta_update_Users = "UPDATE insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion' WHERE id_is = '$id'";
-        $execute_consulta_update_Users = $this->connect->query($consulta_update_Users);
+        $consulta_update_Insumos = "UPDATE insumos_eventtotal SET nombre_is = '$nombre_is', categoria_is = '$categoria_is', unidad_medida_is = '$unidad_medida_is', cantidad_is = '$cantidad', precio_unitario_is = '$precio', descripcion_is = '$descripcion' WHERE id_is = '$id'";
+        $execute_consulta_update_Users = $this->connect->query($consulta_update_Insumos);
     }
 
     //Funcion para borrar insumos
     public function delete_Insumos($id){
-        $consulta_delete_Users = "DELETE FROM insumos_eventtotal WHERE id_is = $id";
-        $query4 = mysqli_query($this->connect, $consulta_delete_Users);
+        $consulta_delete_Insumos = "DELETE FROM insumos_eventtotal WHERE id_is = $id";
+        $query4 = mysqli_query($this->connect, $consulta_delete_Insumos);
     }
 }
