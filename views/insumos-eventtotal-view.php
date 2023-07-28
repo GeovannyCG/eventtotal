@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventTotal | Insumos</title>
+    <title>EventTotal | Inicio</title>
     <!-- link de favicon -->
     <link rel="shortcut icon" href="../assets/images/logotipo-main-curt.ico" type="image/x-icon">
     <!-- link css de boostrap -->
@@ -131,7 +131,7 @@
             </li>
 
             <li>
-                <a href="../Recetario/">
+                <a href="./recipe-book-eventease.html">
                     <i class='bx bxs-book'></i>
                     <span>Recetario</span>
                 </a>
@@ -159,7 +159,7 @@
             </li>
 
             <li>
-                <a href="../Users/">
+                <a href="./staff-eventease.html">
                     <i class='bx bx-group'></i>
                     <span>Personal</span>
                 </a>
@@ -216,10 +216,10 @@
                                 <label class="form-label">Unidad de Medida</label>
                                 <input type="text" class="form-control" placeholder="Selecciona una Unidad de Medida" list="unidad_medidaList" required name="unidad_medida">
                                 <datalist id="unidad_medidaList">
-                                    <option value=" 1 = Litros">
-                                    <option value=" 2 = Mililitros">
-                                    <option value=" 3 = Kilogramos">
-                                    <option value=" 4 = Gramos">
+                                    <option value=" Colocar 1 si son = Litros">
+                                    <option value=" Colocar 2 si son = Mililitros">
+                                    <option value=" Colocar 3 si son = Kilogramos">
+                                    <option value=" Colocar 4 si son = Gramos">
                                 </datalist>
                             </div>
         
@@ -233,9 +233,19 @@
                                 <input type="text" class="form-control" placeholder="Ingresa el Precio" required name="Precio">
                             </div>
         
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <label class="form-label">Descripcion</label>
                                 <input type="text" class="form-control" placeholder="Ingresa la Descripcion" required name="Descripcion_Producto">
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="form-label">Id Usuarios</label>
+                                <input type="text" class="form-control" list="UsuarioList" placeholder="Id" required name="id_u">
+                                <datalist id="UsuarioList">
+                                    <?php foreach ($getId_Users as $id_usuarios){?>
+                                        <option value="<?php echo $id_usuarios['id_u']?>">
+                                    <?php }?>
+                                </datalist>
                             </div>
         
                             <div class="col-12">
