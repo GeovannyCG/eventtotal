@@ -129,7 +129,7 @@
                         </li>
 
                         <li>
-                            <a href="./recipe-book-eventease.html">
+                            <a href="../Recetario/">
                                 <i class='bx bxs-book'></i>
                                 <span>Recetario</span>
                             </a>
@@ -157,14 +157,14 @@
                         </li>
 
                         <li>
-                            <a href="./staff-eventease.html">
+                            <a href="../Users/">
                                 <i class='bx bx-group'></i>
                                 <span>Personal</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="./supplies-eventease.html">
+                            <a href="../Insumos/">
                                 <i class='bx bxs-baguette'></i>
                                 <span>Insumos</span>
                             </a>
