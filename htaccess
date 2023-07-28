@@ -25,3 +25,7 @@ RewriteRule ^Actions-Recetario/$ actions/recetario-eventtotal-action.php
 
 RewriteRule ^Insumos/$ controllers/insumos-eventtotal-controller.php [QSA,L]
 RewriteRule ^Actions_insumos/$ actions/insumos-eventtotal-action.php
+
+RewriteRule ^Inventory/$ controllers/inventory-eventtotal-controller.php [QSA,L]
+RewriteRule ^CrearProduct/$ actions/crearproduct-action.php [QSA,L]
+RewriteRule ^UpdateP/$ actions/updateproduct-action.php [QSA,L]
