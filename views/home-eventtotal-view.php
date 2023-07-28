@@ -143,7 +143,7 @@
             </li>
 
             <li>
-                <a href="./inventory-eventease.html">
+                <a href="../Inventory/">
                     <i class='bx bxs-cube'></i>
                     <span>Inventario</span>
                 </a>
