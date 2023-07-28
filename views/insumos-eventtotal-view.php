@@ -201,7 +201,7 @@
                     </center>
                     <br>
                     <center>
-                        <form class="row g-3 needs-validation" method="POST" action="">
+                        <form class="row g-3 needs-validation" method="POST" action="../Actions_insumos/">
                             <div class="col-md-4">
                                 <label class="form-label">Nombre de Insumo</label>
                                 <input type="text" class="form-control" placeholder="Ingresa el Nombre" required name="Nombre_Insumos">
