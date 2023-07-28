@@ -157,7 +157,7 @@
             </li>
 
             <li>
-                <a href="./supplies-eventease.html">
+                <a href="../Insumos/">
                     <i class='bx bxs-baguette'></i>
                     <span>Insumos</span>
                 </a>
