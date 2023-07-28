@@ -16,3 +16,6 @@ RewriteRule ^Error-Internal/$ views/error-internal-eventease-view.html
 RewriteRule ^Error-Connection/$ views/error-service-unavaible-eventease-view.html
 
 RewriteRule ^Logout/$ actions/logout-eventtotal-action.php
+
+RewriteRule ^Users/$ controllers/users-eventtotal-controller.php [QSA,L]
+RewriteRule ^Actions-Users/$ actions/users-eventtotal-action.php
