@@ -23,5 +23,5 @@ RewriteRule ^Actions-Users/$ actions/users-eventtotal-action.php
 RewriteRule ^Recetario/$ controllers/recetario-eventtotal-controller.php [QSA,L]
 RewriteRule ^Actions-Recetario/$ actions/recetario-eventtotal-action.php
 
-RewriteRule ^Actions_insumos/$ actions/insumos-eventtotal-action.php
 RewriteRule ^Insumos/$ controllers/insumos-eventtotal-controller.php [QSA,L]
+RewriteRule ^Actions_insumos/$ actions/insumos-eventtotal-action.php
