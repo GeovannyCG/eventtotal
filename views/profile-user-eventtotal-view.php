@@ -152,7 +152,7 @@
             </li>
 
             <li>
-                <a href="./staff-eventease.html">
+                <a href="../Users/">
                     <i class='bx bx-group'></i>
                     <span>Personal</span>
                 </a>
