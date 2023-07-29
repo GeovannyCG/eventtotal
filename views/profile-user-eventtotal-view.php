@@ -138,7 +138,7 @@
             </li>
 
             <li>
-                <a href="./lounge-eventease.html">
+                <a href="../Salones/">
                     <i class='bx bxs-arch'></i>
                     <span>Salones</span>
                 </a>
