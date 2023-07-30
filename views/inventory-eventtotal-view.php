@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventTotal | Inicio</title>
+    <title>EventTotal | Inventario</title>
     <!-- link de favicon -->
     <link rel="shortcut icon" href="../assets/images/logotipo-main-curt.ico" type="image/x-icon">
     <!-- link css de boostrap -->
