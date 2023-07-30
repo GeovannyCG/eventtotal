@@ -31,4 +31,4 @@ RewriteRule ^CrearProduct/$ actions/crearproduct-action.php [QSA,L]
 RewriteRule ^UpdateP/$ actions/updateproduct-action.php [QSA,L]
 
 RewriteRule ^Salones/$ controllers/salones-eventtotal-controller.php [QSA,L]
-RewriteRule ^Actions_salones/$ actions/salones-eventtotal-action.php
+RewriteRule ^Actions_Salones/$ actions/salones-eventtotal-action.php
