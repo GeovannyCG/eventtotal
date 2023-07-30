@@ -1,32 +1,54 @@
 <?php
-// Importa la clase SalonesEventTotal
-require('../views/salones-eventtotal-view.php');
 
-// Crea una instancia de la clase SalonesEventTotal
-$salonesObj = new SalonesEventTotal();
+session_start();
 
-// Obtiene los salones de eventos de la base de datos utilizando el método get_Salones()
-$get_salones = $salonesObj->get_Salones();
-?>
+require('../config/database.php');
 
-<!-- Luego, en la parte del código donde se muestra la tabla -->
-<?php if (is_array($get_salones) && !empty($get_salones)): ?>
-    <?php foreach ($get_salones as $salon): ?>
-        <!-- Código para mostrar la tabla y los datos de los salones de eventos aquí -->
-        <tr>
-            <td style="text-align: center;"><?php echo $salon['id_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['nombre_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['cap_personas_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['estado_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['imagenes_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['id_u']; ?></td>
-            <td>
-                <!-- Código para los botones de editar y borrar aquí -->
-            </td>
-        </tr>
-    <?php endforeach; ?>
-<?php else: ?>
-    <tr>
-        <td colspan="6" style="text-align: center;">No hay salones de eventos disponibles.</td>
-    </tr>
-<?php endif; ?>
+class salones {
+    private $connect;
+
+    public function __construct() {
+        $connectObject = new Connection();
+        $this->connect = $connectObject->getConn();
+    }
+
+    //Funcion para obtener todos los salones de la base de datos
+    public function get_salones(){
+        $consulta_get_salones = ("SELECT * FROM salones_eventtotal");
+        $execute_consulta_get_salones = $this->connect->query($consulta_get_salones);
+        $salones = array();
+        while ($fila1 = $execute_consulta_get_salones->fetch_assoc()) {
+            $salones[] = $fila1;
+        }
+        return $salones;
+    }
+
+    //Funcion para obtener todos los ids de usuarios de la base de datos
+    public function get_Id_Users(){
+        $consulta_get_idUsers = ("SELECT * FROM usuarios_eventtotal");
+        $execute_consulta_get_idUsers = $this->connect->query($consulta_get_idUsers);
+        $idusuarios = array();
+        while ($fila1 = $execute_consulta_get_idUsers->fetch_assoc()) {
+            $idusuarios[] = $fila1;
+        }
+        return $idusuarios;
+    }
+
+    //Funcion para insertar nuevos salones
+    public function insert_salones($nombre_s, $cap_personas_s, $estado_s, $imagenes_s, $id_u){
+        $consulta_insert_salones = ("INSERT INTO salones_eventtotal SET nombre_s = '$nombre_s', cap_personas_s = '$cap_personas_s', estado_s = '$estado_s', id_u = '$id_u'");
+        $execute_consulta_insert_salones = $this->connect->query($consulta_insert_salones);
+    }
+
+    //Funcion para actualizar salones
+    public function update_salones($id,$nombre_s, $cap_personas_s, $estado_s, $imagenes_s, $id_u){
+        $consulta_update_salones = ("UPDATE salones_eventtotal SET nombre_s = '$nombre_s', cap_personas_s = '$cap_personas_s', estado_s = '$estado_s', id_u = '$id_u' WHERE id_s = '$id'");
+        $execute_consulta_update_salones = $this->connect->query($consulta_update_salones);
+    }
+
+    //Funcion para borrar salones
+    public function delete_salones($id){
+        $consulta_delete_salones = "DELETE FROM salones_eventtotal WHERE id_s = $id";
+        $query4 = mysqli_query($this->connect, $consulta_delete_salones);
+    }
+}
