@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventTotal | Inicio</title>
     <!-- link de favicon -->
-    <link rel="shortcut icon" href="/assets/images/logotipo-main-curt.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logotipo-main-curt.ico" type="image/x-icon">
     <!-- link css de boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!--CSS para los icons de Boxicons-->
@@ -175,181 +175,178 @@
         </ul>
     </div>
 
-
     <!-- Contenedor para el contenido prinicipal del apartado en cuestion ################-->
     <div class="wrapper" id="contenedor-main">
-    <!-- Titulo de Apartado -->
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <div class="page-title-right">
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item active">Salones de Eventos</li>
-                    </ol>
+        <!-- Titulo de Apartado -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item active">salones</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-
-
-  <!-- Ingresar Nuevos Salón -->
-<div class="ingresar_usuarios mb-3">
-    <div class="card shadow">
-        <div class="card-body">
-            <center>
-                <h1 style="font-size: 26px;">INGRESAR NUEVO SALON DE EVENTOS</h1>
-            </center>
-            <br>
-            <center>
-                <form class="row g-3 needs-validation" method="POST" action="../Actions_salones/">
-
-                    <div class="col-md-4">
-                        <label class="form-label">Nombre de Salón</label>
-                        <input type="text" class="form-control" placeholder="Ingresa el Nombre" required name="nombre_s">
-                    </div>
-
-                    <div class="col-md-4">
-                        <label class="form-label">Capacidad de Personas</label>
-                        <input type="text" class="form-control" placeholder="Ingresa la Capacidad" required name="cap_personas_s">
-                    </div>
-
-                    <div class="col-md-4">
-                        <label class="form-label">Estado</label>
-                        <input type="text" class="form-control" placeholder="Ingresa el Estado" required name="estado_s">
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label">Imágenes del Salón</label>
-                        <input type="text" class="form-control" placeholder="Ingresa la URL de la Imagen" required name="imagenes_s">
-                    </div>
-
-                    <div class="col-md-2">
-                        <label class="form-label">ID de Usuario</label>
-                        <input type="text" class="form-control" list="UsuarioList" placeholder="ID" required name="id_u">
-                        <datalist id="UsuarioList">
-                            <?php foreach ($getId_Users as $id_usuarios) {?>
-                                <option value="<?php echo $id_usuarios['id_u'] ?>">
-                            <?php }?>
-                        </datalist>
-                    </div>
-
-                    <div class="col-12">
-                        <input class="btn btn-primary" type="submit" name="create" value="Registrar Salón">
-                    </div>
-                </form>
-            </center>
-        </div>
-    </div>
-</div>
-    <!-- Termina Nuevos Salones-->
-</div>
-
-        <!-- Administrar Salones de Eventos -->
-<div class="Administrar_salones">
-    <div class="card shadow">
-        <div class="card-body">
-            <div class="table-responsive-xxl">
-                <!-- Tabla de Salones de Eventos -->
-                <center>
-                    <h1 style="font-size: 26px;">ADMINISTRACIÓN DE SALONES DE EVENTOS</h1>
-                </center>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" style="text-align: center;">ID</th>
-                            <th scope="col" style="text-align: center;">Nombre</th>
-                            <th scope="col" style="text-align: center;">Capacidad de Personas</th>
-                            <th scope="col" style="text-align: center;">Estado</th>
-                            <th scope="col" style="text-align: center;">Imágenes</th>
-                            <th scope="col" style="text-align: center;">ID de Usuario</th>
-                            <th scope="col" style="text-align: center;">Actualizar</th>
-                            <th scope="col" style="text-align: center;">Borrar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                    <?php if (isset($get_salones) && is_array($get_salones) && !empty($get_salones)): ?>
-    <?php foreach ($get_salones as $salon): ?>
-        <tr>
-            <td style="text-align: center;"><?php echo $salon['id_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['nombre_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['cap_personas_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['estado_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['imagenes_s']; ?></td>
-            <td style="text-align: center;"><?php echo $salon['id_u']; ?></td>
-            <td>
-                <center>
-                    <button class="btn btn-warning btn-sm" id="btn-edit<?php echo $salon['id_s']; ?>" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $salon['id_s']; ?>">Editar</button>
-                </center>
-            </td>
-            <td>
-                <form action="../salones/?id=<?php echo $salon['id_s']; ?>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este salón de eventos?');">
-                    <center><input type="submit" class="btn btn-danger btn-sm" name="delete" value="Borrar"></center>
-                </form>
-            </td>
-        </tr>
-
-        <!-- Formato para actualizar salón de eventos -->
-        <div class="modal fade" id="exampleModal<?php echo $salon['id_s']; ?>" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5"><?php echo $salon['nombre_s']; ?></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row g-3 needs-validation" action="../salones/?id=<?php echo $salon['id_s']; ?>" method="POST">
-                            <br>
+        <br>
+    
+        <!-- Ingresar Nuevos salones-->
+        <div class="ingresar_usuarios mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <center>
+                        <h1 style="font-size: 26px;">INGRESAR NUEVO SALON</h1>
+                    </center>
+                    <br>
+                    <center>
+                        <form class="row g-3 needs-validation" method="POST" action="../Actions_Salones/">
+                           
+        
                             <div class="col-md-4">
-                                <label class="form-label">Nombre de Salón</label>
-                                <input type="text" class="form-control" placeholder="Ingresa el Nombre" required name="nombre_salon" value="<?php echo $salon['nombre_s']; ?>">
+                                <label class="form-label">Nombre del Cliente</label>
+                                <input type="text" class="form-control" placeholder="Ingrese El Nombre" required name="nombre_s">
                             </div>
-
+        
                             <div class="col-md-4">
                                 <label class="form-label">Capacidad de Personas</label>
-                                <input type="text" class="form-control" placeholder="Ingresa la Capacidad" required name="cap_personas" value="<?php echo $salon['cap_personas_s']; ?>">
+                                <input type="text" class="form-control" placeholder="Ingrese Capacidad" required name="cap_personas">
                             </div>
-
-                            <div class="col-md-4">
-                                <label class="form-label">Estado</label>
-                                <input type="text" class="form-control" placeholder="Ingresa el Estado" required name="estado" value="<?php echo $salon['estado_s']; ?>">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Imágenes del Salón</label>
-                                <input type="text" class="form-control" placeholder="Ingresa la URL de la Imagen" required name="imagenes_salon" value="<?php echo $salon['imagenes_s']; ?>">
-                            </div>
-
+        
                             <div class="col-md-2">
-                                <label class="form-label">ID de Usuario</label>
-                                <input type="text" class="form-control" list="UsuarioList" placeholder="ID" required name="id_usuario" value="<?php echo $salon['id_u']; ?>">
-                                <datalist id="UsuarioList">
-                                    <?php foreach ($getId_Users as $id_usuarios): ?>
-                                        <option value="<?php echo $id_usuarios['id_u'] ?>">
-                                    <?php endforeach; ?>
-                                </datalist>
+                                <label class="form-label">Estado del salon</label>
+                                <input type="text" class="form-control" placeholder="Confirme si es Activo o Inactivo" required name="estado_s">
                             </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button class="btn btn-success" type="submit" name="update">Guardar Cambios</button>
+        
+                            <div class="col-md-2">
+                                <label class="form-label">imagen del salon</label>
+                                <input type="text" class="form-control" placeholder="Ingrese su fotografia" required name="imagenes_s">
+                            </div>
+        
+                           
+                            <div class="col-md-2">
+                                <label class="form-label">Id Usuarios</label>
+                                <input type="text" class="form-control" list="UsuarioList" placeholder="Id" required name="id_u">
+                                <datalist id="UsuarioList">
+                                    <?php foreach ($getId_Users as $id_usuarios){?>
+                                        <option value="<?php echo $id_usuarios['id_u']?>">
+                                    <?php }?>
+                                </datalist>
+                            </div>
+        
+                            <div class="col-12">
+                                <input class="btn btn-primary" type="submit" name="create" value="Registrar Salon">
                             </div>
                         </form>
-                    </div>
+                    </center>
                 </div>
             </div>
         </div>
-        <!-- Termina Formato para actualizar salón de eventos -->
-    <?php endforeach; ?>
-<?php else: ?>
-    <tr>
-        <td colspan="8" style="text-align: center;">No hay salones de eventos disponibles.</td>
-    </tr>
-<?php endif; ?>
+        <!-- Termina Creacion de salon-->
 
+        <!-- Administrar Salones-->
+        <div class="Administrar_salones">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="table-responsive-xxl">
+                        <!-- Tabla de Usuarios -->
+                        <center>
+                            <h1 style="font-size: 26px;">ADMINISTRACIÓN DE LOS SALONES</h1>
+                        </center>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="text-align: center;">#</th>
+                                    <th scope="col" style="text-align: center;">Nombre Cliente</th>
+                                    <th scope="col" style="text-align: center;">Capacidad de Personas</th>
+                                    <th scope="col" style="text-align: center;">Estado del Salon</th>
+                                    <th scope="col" style="text-align: center;">imagenes del salon</th>
+                                    <th scope="col" style="text-align: center;">id_u</th>
+                                    <th scope="col" style="text-align: center;">Actualizar</th>
+                                    <th scope="col" style="text-align: center;">Borrar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
+                            <?php foreach ($get_salones as $salones){?>
+
+                                    <tr>
+                                        <td style="text-align: center;"><?php echo $salones['id_s'];?></td>
+                                        <td style="text-align: center;"><?php echo $salones['nombre_s'];?></td>
+                                        <td style="text-align: center;"><?php echo $salones['cap_personas_s'];?></td>
+                                        <td style="text-align: center;"><?php echo $salones['estado_s'];?></td>
+                                        <td style="text-align: center;"><?php echo $salones['imagenes_s'];?></td>
+                                        <td style="text-align: center;"><?php echo $salones['id_u'];?></td>
+                                        <td>
+                                            <center><button class="btn btn-warning btn-sm" id="btn-edit<?php echo $salones['id_s'];?>" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $salones['id_s'];?>">Editar</button></center>
+                                        </td>
+                                        <td>
+                                            <form action="../Actions_Salones/?id=<?php echo $salones['id_s'];?>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
+                                                <center><input type="submit" class="btn btn-danger btn-sm" name="delete" value="Borrar"></center>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Formato para actuatlizar usuario -->
+                                    <div class="modal fade" id="exampleModal<?php echo $salones['id_s'];?>" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5"><?php echo $salones['nombre_s'];?></h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="row g-3 needs-validation" action="../Actions_Salones/?id=<?php echo $salones['id_s'];?>" method="POST">
+                                                    <br>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Nombre de Cliente</label>
+                                                        <input type="text" class="form-control" placeholder="Ingresa el Nombre" required name="Nombre_s" value="<?php echo $salones['nombre_s'];?>">
+                                                    </div>
+                                
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Capacidad de Personas</label>
+                                                        <input type="text" class="form-control" placeholder="Ingresa la Capacidad" required name="cap_personas_s" value="<?php echo $salones['cap_personas_s'];?>">
+                                                    </div>
+                                
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Estado del Salon</label>
+                                                        <input type="text" class="form-control" placeholder="Confirme si es Activo o Inactivo" required name="estado_s" value="<?php echo $salones['estado_s'];?>">
+                                                    </div>
+                                
+                                                    <div class="col-md-2">
+                                                        <label class="form-label">Imagenes del Salon</label>
+                                                        <input type="text" class="form-control" placeholder="Ingresa la fotografia" required name="imagenes_s" value="<?php echo $salones['imagenes_s'];?>">
+                                                    </div>
+                                
+                                                    <div class="col-md-2">
+                                                        <label class="form-label">id_usuario</label>
+                                                        <input type="text" class="form-control" placeholder="id_u" required name="id_u" value="<?php echo $salones['id_u'];?>">
+                                                    </div>
+                                
+                                
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button class="btn btn-success" type="submit" name="update">Guardar Cambios</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Termina Formato para actuatlizar usuario -->
+                                <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Termina Tabla de Usuarios -->
+                </div>
+                <!-- Termina Card Body -->
+            </div>
+            <!-- Termina Card Shadow -->
+        </div>
+        <!-- Termina Administrar Usuarios-->
+
+    </div>
+    <!-- Termina Contenedor Principal-->
 
 
     <!-- Script de JS Boostrap  -->
@@ -358,7 +355,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
     <!--Script para funcion de boton-->
-    <script src="./assets/js/general-items-function-min.js"></script>
+    <script src="../assets/js/general-items-function-min.js"></script>
 </body>
 
 </html>
