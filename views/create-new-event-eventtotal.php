@@ -134,13 +134,6 @@
             </li>
 
             <li>
-                <a href="./events-eventease.html">
-                    <i class='bx bxs-party'></i>
-                    <span>Eventos</span>
-                </a>
-            </li>
-
-            <li>
                 <a href="../Salones/">
                     <i class='bx bxs-arch'></i>
                     <span>Salones</span>
