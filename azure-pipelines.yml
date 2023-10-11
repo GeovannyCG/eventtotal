@@ -24,3 +24,12 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+
+# Agrega un paso para clonar tu repositorio de GitHub
+- script: |
+    git clone https://github.com/GeovannyCG/eventtotal.git
+    # Puedes ajustar la URL de tu repositorio
+  displayName: 'Clonar Repositorio de GitHub'
+
+# Agrega más pasos según tus necesidades, como ejecución de pruebas, empaquetado, etc.
+
